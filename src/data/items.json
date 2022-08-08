@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "golf black pants",
+    "price": 89.99,
+    "imgUrl": "/imgs/pants1.jpg",
+    "createdAt": "04/2022"
+  },
+  {
+    "id": 2,
+    "name": "golf blue pants",
+    "price": 89.99,
+    "imgUrl": "/imgs/pants2.jpg",
+    "createdAt": "03/2022"
+  },
+  {
+    "id": 3,
+    "name": "golf white pants",
+    "price": 89.99,
+    "imgUrl": "/imgs/pants3.jpg",
+    "createdAt": "02/2022"
+  },
+  {
+    "id": 4,
+    "name": "single color shirt",
+    "price": 109.99,
+    "imgUrl": "/imgs/shirt3.jpg",
+    "createdAt": "04/2022"
+  },
+  {
+    "id": 5,
+    "name": "striped shirt",
+    "price": 109.99,
+    "imgUrl": "/imgs/shirt1.jpg",
+    "createdAt": "02/2022"
+  },
+  {
+    "id": 6,
+    "name": "single color shirt",
+    "price": 109.99,
+    "imgUrl": "/imgs/shirt2.jpg",
+    "createdAt": "04/2022"
+  }
+]
