@@ -31,7 +31,9 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                 }, 0)
               )}
             </div>
-            <Link to="/cart" className='btn btn-primary' onClick={closeCart}>Check out</Link>
+            <Link to="/cart" className="btn btn-primary" onClick={closeCart}>
+              Check out
+            </Link>
           </div>
         </Stack>
       </Offcanvas.Body>

@@ -1,4 +1,4 @@
-import { Button, ListGroup } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import storeItems from '../data/items.json';
 import { formatCurrency } from '../utilities/formatCurrency';
@@ -9,7 +9,7 @@ type TableRowProps = {
 };
 
 export function GetProducts({ id }: TableRowProps) {
-  const { increaseCartQuantity, cartQuantity } = useShoppingCart();
+  const { increaseCartQuantity } = useShoppingCart();
 
   const item = storeItems.find((i) => i.id === id);
   if (item == null) return null;
@@ -22,14 +22,15 @@ export function GetProducts({ id }: TableRowProps) {
             <img
               src={item.imgUrl}
               style={{
-                width: '50px',
-                height: '50px',
+                width: '90px',
+                height: '90px',
                 objectFit: 'cover',
               }}
             />
             <div className="ms-1 d-flex flex-column pt-2 text-capitalize">
               <span>{item.name}</span>
               <p> {formatCurrency(item.price)}</p>
+              <span>released At: {item.createdAt}</span>
             </div>
           </div>
           <div></div>

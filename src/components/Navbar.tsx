@@ -82,7 +82,11 @@ export function Navbar() {
               aria-label="Search..."
               aria-describedby="basic-addon2"
             />
-            <InputGroup.Text id="basic-addon2" className="btn btn-outline-primary" onClick={handleSearch}>
+            <InputGroup.Text
+              id="basic-addon2"
+              className="btn btn-outline-primary"
+              onClick={handleSearch}
+            >
               <BiSearch />
             </InputGroup.Text>
           </InputGroup>

@@ -4,7 +4,6 @@ import { useShoppingCart } from '../context/ShoppingCartContext';
 import { formatCurrency } from '../utilities/formatCurrency';
 import { TableRow } from './TableRow';
 import storeItems from '../data/items.json';
-import { useEffect, useState } from 'react';
 
 export function ItemCheckout() {
   const { cartItems, cartQuantity } = useShoppingCart();
@@ -42,6 +41,12 @@ export function ItemCheckout() {
           </Col>
           <Col>
             <Card className="col-4 mt-2 w-100">
+              <span
+                className="text-center mt-1 text-primary"
+                style={{ fontSize: '14px' }}
+              >
+                *Free shipping for purchases over $100*
+              </span>
               <div className="d-flex justify-content-between align-items-center mx-4 mt-3">
                 <div className="">Subtotal:</div>
                 <div className=" fw-bold fs-5">{totalCost}</div>
@@ -50,12 +55,11 @@ export function ItemCheckout() {
                 <div className="">Deliver:</div>
                 <div className=" fw-bold fs-5">{delivery}</div>
               </div>
-              <div className='border-bottom w-75 mb-4 ms-5 me-2 mt-4'></div>
+              <div className="border-bottom w-75 mb-4 ms-5 me-2 mt-4"></div>
               <div className="d-flex justify-content-between align-items-center mt-0 pt-0 mx-4 mb-3">
                 <div className="">Total:</div>
                 <div className=" fw-bold fs-5">{total}</div>
               </div>
-              
               <Button className="mx-4">Check Out</Button>
               <Link to="/store" className="btn btn-success mx-4 mt-2 mb-4">
                 Keep Buying

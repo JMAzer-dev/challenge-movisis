@@ -28,9 +28,9 @@ export function TableRow({ id, quantity }: TableRowProps) {
                 objectFit: 'cover',
               }}
             />
-            <div  className="ms-1 d-flex flex-column pt-2 text-capitalize">
+            <div className="ms-1 d-flex flex-column pt-2 text-capitalize">
               <span>{item.name}</span>
-              
+
               <p> {formatCurrency(item.price * quantity)}</p>
             </div>
           </div>

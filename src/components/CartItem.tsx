@@ -25,10 +25,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
       />
       <div className="me-auto">
         <div>
-          <p className='text-capitalize'>
-
-          {item.name}{' '}
-          </p>
+          <p className="text-capitalize">{item.name} </p>
           {quantity > 1 && (
             <span className="text-muted" style={{ fontSize: '.65rem' }}>
               x{quantity}

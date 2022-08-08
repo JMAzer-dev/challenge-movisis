@@ -28,7 +28,7 @@ export function StoreItem({
   return (
     <Card className="h-100">
       <Card.Img
-      className='img-thumbnail'
+        className="img-thumbnail"
         variant="top"
         src={imgUrl}
         style={{ objectFit: 'cover' }}
