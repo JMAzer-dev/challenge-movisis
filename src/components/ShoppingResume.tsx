@@ -8,26 +8,14 @@ import storeItems from '../data/items.json';
 export function ItemCheckout() {
   const { cartItems, cartQuantity } = useShoppingCart();
 
-  const totalCost = formatCurrency(
-    cartItems.reduce((total, cartItem) => {
-      const item = storeItems.find((i) => i.id === cartItem.id);
-      return total + (item?.price || 0) * cartItem.quantity;
-    }, 0)
-  );
-  const delivery = formatCurrency(
-    cartItems.reduce((total, cartItem) => {
-      const item = storeItems.find((i) => i.id === cartItem.id);
-      return total + (item?.price || 0) * cartItem.quantity < 100 ? 10 : 0;
-    }, 0)
-  );
-  const total = formatCurrency(
-    cartItems.reduce((total, cartItem) => {
-      const item = storeItems.find((i) => i.id === cartItem.id);
-      return total + (item?.price || 0) * cartItem.quantity < 100
-        ? total + (item?.price || 0) * cartItem.quantity + 10
-        : total + (item?.price || 0) * cartItem.quantity;
-    }, 0)
-  );
+  const totalCost = cartItems.reduce((total, cartItem) => {
+    const item = storeItems.find((i) => i.id === cartItem.id);
+    return total + (item?.price || 0) * cartItem.quantity;
+  }, 0);
+
+  const delivery = totalCost < 100 ? 10 : 0;
+  
+  const total = delivery + totalCost;
 
   return cartQuantity > 0 ? (
     <>
@@ -49,16 +37,16 @@ export function ItemCheckout() {
               </span>
               <div className="d-flex justify-content-between align-items-center mx-4 mt-3">
                 <div className="">Subtotal:</div>
-                <div className=" fw-bold fs-5">{totalCost}</div>
+                <div className=" fw-bold fs-5">{formatCurrency(totalCost)}</div>
               </div>
               <div className="d-flex justify-content-between align-items-center mt-0 pt-0 mx-4">
                 <div className="">Deliver:</div>
-                <div className=" fw-bold fs-5">{delivery}</div>
+                <div className=" fw-bold fs-5">{formatCurrency(delivery)}</div>
               </div>
               <div className="border-bottom w-75 mb-4 ms-5 me-2 mt-4"></div>
               <div className="d-flex justify-content-between align-items-center mt-0 pt-0 mx-4 mb-3">
                 <div className="">Total:</div>
-                <div className=" fw-bold fs-5">{total}</div>
+                <div className=" fw-bold fs-5">{formatCurrency(total)}</div>
               </div>
               <Button className="mx-4">Check Out</Button>
               <Link to="/store" className="btn btn-success mx-4 mt-2 mb-4">
